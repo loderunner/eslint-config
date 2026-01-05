@@ -1,0 +1,84 @@
+{
+  "name": "eslint-config-loderunner",
+  "version": "0.1.0",
+  "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, and more",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./base": "./src/base.js",
+    "./typescript": "./src/typescript.js",
+    "./import": "./src/import.js",
+    "./react": "./src/react.js",
+    "./vitest": "./src/vitest.js",
+    "./jsdoc": "./src/jsdoc.js",
+    "./formatting": "./src/formatting.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "typescript",
+    "react",
+    "vitest",
+    "flat-config"
+  ],
+  "author": "Charles Francoise",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loderunner/eslint-config.git"
+  },
+  "homepage": "https://github.com/loderunner/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/loderunner/eslint-config/issues"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/eslint": "^9.6.0",
+    "@vitest/eslint-plugin": "^1.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^50.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^16.0.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@vitest/eslint-plugin": "^1.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^50.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vitest/eslint-plugin": {
+      "optional": true
+    },
+    "eslint-config-prettier": {
+      "optional": true
+    },
+    "eslint-plugin-import": {
+      "optional": true
+    },
+    "eslint-plugin-jsdoc": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    }
+  }
+}
