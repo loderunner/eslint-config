@@ -7,6 +7,20 @@ Each config is available in two forms: **full configs** (includes plugins and
 recommended rules) and **rules-only** exports (just the custom rules, for mixing
 with your own setup).
 
+- [Installation](#installation)
+- [Configs](#configs)
+  - [base](#base)
+  - [typescript](#typescript)
+  - [react](#react)
+  - [import](#import)
+  - [jsdoc](#jsdoc)
+  - [vitest](#vitest)
+  - [formatting](#formatting)
+- [Example Project Configurations](#example-project-configurations)
+  - [Vite + React Frontend](#vite--react-frontend)
+  - [Node.js Backend/CLI](#nodejs-backendcli)
+  - [Library](#library)
+
 ## Installation
 
 ```bash
@@ -226,7 +240,7 @@ export default [
 ];
 ```
 
-## Typical Project Setups
+## Example Project Configurations
 
 ### Vite + React Frontend
 

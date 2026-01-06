@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-loderunner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, and more",
   "type": "module",
   "exports": {
