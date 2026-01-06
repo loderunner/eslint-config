@@ -12,6 +12,7 @@ with your own setup).
   - [base](#base)
   - [typescript](#typescript)
   - [react](#react)
+  - [Vue](#vue)
   - [import](#import)
   - [jsdoc](#jsdoc)
   - [vitest](#vitest)
@@ -117,6 +118,34 @@ import reactConfig from 'eslint-config-loderunner/react';
 export default [
   // ... your configs
   ...reactConfig,
+];
+```
+
+### Vue
+
+Vue.js rules.
+
+**Peer dependencies:** `eslint-plugin-vue`
+
+**Rules-only usage:**
+
+```javascript
+import vueRules from 'eslint-config-loderunner/vue/rules';
+
+export default [
+  // ... your configs
+  vueRules,
+];
+```
+
+**Full config usage:**
+
+```javascript
+import vueConfig from 'eslint-config-loderunner/vue';
+
+export default [
+  // ... your configs
+  ...vueConfig,
 ];
 ```
 
