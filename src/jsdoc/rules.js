@@ -2,7 +2,7 @@
  * JSDoc documentation ESLint rules.
  *
  * Rules included:
- * - `jsdoc/require-jsdoc`: Require JSDoc for public exports
+ * - `jsdoc/require-jsdoc`: Require JSDoc for public functions, methods, and classes
  * - `jsdoc/check-alignment`: Enforce consistent asterisk alignment
  * - `jsdoc/check-indentation`: Enforce consistent tag indentation
  * - `jsdoc/multiline-blocks`: Enforce multiline JSDoc format
@@ -13,7 +13,17 @@
  */
 const jsdocRules = {
   rules: {
-    'jsdoc/require-jsdoc': ['warn', { publicOnly: true }],
+    'jsdoc/require-jsdoc': [
+      'warn',
+      {
+        publicOnly: true,
+        require: {
+          FunctionDeclaration: true,
+          MethodDefinition: true,
+          ClassDeclaration: true,
+        },
+      },
+    ],
     'jsdoc/check-alignment': 'warn',
     'jsdoc/check-indentation': 'warn',
     'jsdoc/multiline-blocks': 'warn',
