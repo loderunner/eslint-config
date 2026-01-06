@@ -41,6 +41,11 @@
   "bugs": {
     "url": "https://github.com/loderunner/eslint-config/issues"
   },
+  "scripts": {
+    "lint": "prettier --check . && eslint --max-warnings=0",
+    "lint:fix": "prettier --write . && eslint --fix",
+    "prepare": "npm run lint"
+  },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
     "@types/eslint": "^9.6.0",
@@ -66,10 +71,6 @@
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "typescript-eslint": "^8.0.0"
-  },
-  "scripts": {
-    "lint": "prettier --check . && eslint --max-warnings=0",
-    "lint:fix": "prettier --write . && eslint --fix"
   },
   "peerDependenciesMeta": {
     "@vitest/eslint-plugin": {
