@@ -5,14 +5,20 @@
   "type": "module",
   "main": "./src/index.js",
   "exports": {
-    ".": "./src/index.js",
-    "./base": "./src/base.js",
-    "./typescript": "./src/typescript.js",
-    "./import": "./src/import.js",
-    "./react": "./src/react.js",
-    "./vitest": "./src/vitest.js",
-    "./jsdoc": "./src/jsdoc.js",
-    "./formatting": "./src/formatting.js"
+    "./base": "./src/base/config.js",
+    "./base/rules": "./src/base/rules.js",
+    "./typescript": "./src/typescript/config.js",
+    "./typescript/rules": "./src/typescript/rules.js",
+    "./import": "./src/import/config.js",
+    "./import/rules": "./src/import/rules.js",
+    "./react": "./src/react/config.js",
+    "./react/rules": "./src/react/rules.js",
+    "./vitest": "./src/vitest/config.js",
+    "./vitest/rules": "./src/vitest/rules.js",
+    "./jsdoc": "./src/jsdoc/config.js",
+    "./jsdoc/rules": "./src/jsdoc/rules.js",
+    "./formatting": "./src/formatting/config.js",
+    "./formatting/rules": "./src/formatting/rules.js"
   },
   "files": [
     "src"
@@ -41,11 +47,12 @@
     "@vitest/eslint-plugin": "^1.0.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.0.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsdoc": "^50.0.0",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "globals": "^16.0.0",
+    "prettier": "^3.7.4",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.0.0"
   },
@@ -58,8 +65,11 @@
     "eslint-plugin-jsdoc": "^50.0.0",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "globals": "^16.0.0",
     "typescript-eslint": "^8.0.0"
+  },
+  "scripts": {
+    "lint": "prettier --check . && eslint --max-warnings=0",
+    "lint:fix": "prettier --write . && eslint --fix"
   },
   "peerDependenciesMeta": {
     "@vitest/eslint-plugin": {

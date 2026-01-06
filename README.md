@@ -1,320 +1,286 @@
 # eslint-config-loderunner
 
-Reusable ESLint flat configs for TypeScript, React, Vitest, and more. Composable and modular—pick only what you need.
+Reusable ESLint flat configs for TypeScript, React, Vitest, and more.
+
+This package provides modular ESLint configurations that you can mix and match.
+Each config is available in two forms: **full configs** (includes plugins and
+recommended rules) and **rules-only** exports (just the custom rules, for mixing
+with your own setup).
 
 ## Installation
 
 ```bash
-pnpm add -D eslint-config-loderunner
+npm install --save-dev eslint-config-loderunner
+# or
+pnpm add --save-dev eslint-config-loderunner
+# or
+yarn add --dev eslint-config-loderunner
 ```
 
-Install peer dependencies based on which configs you use (see each config's requirements below).
+## Configs
 
-## Usage
+### base
 
-Import the configs you need and compose them in your `eslint.config.js`:
+Core JavaScript rules including strict equality, no `var`, and no duplicate
+imports.
 
-```js
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import prettierConfig from 'eslint-config-prettier';
-import { configs } from 'eslint-config-loderunner';
+**Peer dependencies:** `@eslint/js`
+
+**Rules-only usage:**
+
+```javascript
+import baseRules from 'eslint-config-loderunner/base/rules';
 
 export default [
-  { files: ['**/*.{js,ts}'] },
-  { ignores: ['dist/**/*', 'node_modules/**/*'] },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: {
-          allowDefaultProject: ['*.config.js'],
-        },
-      },
-    },
-  },
-  configs.base,
-  configs.typescript,
-  configs.importOrder,
-  prettierConfig,
-  configs.formatting, // Must be last
+  // ... your configs
+  baseRules,
 ];
 ```
 
-## Available Configs
+**Full config usage:**
 
-### `base`
-
-Core JavaScript rules.
-
-**Rules:**
-- `eqeqeq: 'error'` - Require strict equality
-- `no-duplicate-imports: 'error'` - Disallow duplicate imports
-
-**Peer dependencies:** None (uses built-in ESLint rules)
-
----
-
-### `typescript`
-
-TypeScript-specific rules. Assumes you've set up `typescript-eslint` with type-checked linting.
-
-**Rules:**
-- `@typescript-eslint/no-unused-vars` - Error on unused vars, with `_` prefix pattern ignored
-- `@typescript-eslint/switch-exhaustiveness-check` - Warn on non-exhaustive switches
-- `@typescript-eslint/strict-boolean-expressions` - Require explicit boolean expressions
-- `@typescript-eslint/prefer-nullish-coalescing` - Prefer `??` over `||`
-- `@typescript-eslint/no-unnecessary-condition` - Warn on always-truthy/falsy conditions
-- `@typescript-eslint/no-misused-promises` - Error on misused promises (void return allowed)
-- `@typescript-eslint/consistent-type-imports` - Enforce inline type imports
-- Disables: `no-explicit-any`, `unbound-method`, `prefer-promise-reject-errors`, `require-await`
-
-**Peer dependencies:**
-```bash
-pnpm add -D typescript-eslint
-```
-
-**Recommended setup:**
-```js
-import tseslint from 'typescript-eslint';
-import { configs } from 'eslint-config-loderunner';
+```javascript
+import baseConfig from 'eslint-config-loderunner/base';
 
 export default [
-  ...tseslint.configs.recommendedTypeChecked,
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: {
-          allowDefaultProject: ['*.config.js'],
-        },
-      },
-    },
-  },
-  configs.typescript,
+  // ... your configs
+  ...baseConfig,
 ];
 ```
 
----
+### typescript
 
-### `importOrder`
+TypeScript rules with type-checking enabled. Includes strict boolean
+expressions, exhaustive switch checks, and consistent type imports.
 
-Import ordering and organization.
+**Peer dependencies:** `typescript-eslint`
 
-**Rules:**
-- `import/order` - Enforce alphabetized imports with newlines between groups
+**Rules-only usage:**
 
-**Peer dependencies:**
-```bash
-pnpm add -D eslint-plugin-import
-```
-
----
-
-### `react`
-
-React-specific rules. Assumes you've set up `eslint-plugin-react` and `eslint-plugin-react-hooks`.
-
-**Rules:**
-- `react/jsx-sort-props` - Sort JSX props (callbacks last, reserved first)
-
-**Peer dependencies:**
-```bash
-pnpm add -D eslint-plugin-react eslint-plugin-react-hooks
-```
-
-**Recommended setup:**
-```js
-import reactPlugin from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import { configs } from 'eslint-config-loderunner';
+```javascript
+import typescriptRules from 'eslint-config-loderunner/typescript/rules';
 
 export default [
-  {
-    settings: {
-      react: { version: 'detect' },
-    },
-  },
-  reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat['jsx-runtime'],
-  reactHooks.configs.flat.recommended,
-  configs.react,
+  // ... your configs
+  typescriptRules,
 ];
 ```
 
----
+**Full config usage:**
 
-### `vitest`
-
-Relaxed TypeScript rules for test files.
-
-**Rules:**
-- `@typescript-eslint/no-unsafe-assignment: 'off'`
-- `@typescript-eslint/no-unsafe-member-access: 'off'`
-
-**Peer dependencies:**
-```bash
-pnpm add -D @vitest/eslint-plugin
-```
-
-**Recommended setup:**
-```js
-import vitestPlugin from '@vitest/eslint-plugin';
-import { configs } from 'eslint-config-loderunner';
+```javascript
+import typescriptConfig from 'eslint-config-loderunner/typescript';
 
 export default [
+  // ... your configs
+  ...typescriptConfig,
+];
+```
+
+### react
+
+React and React Hooks rules. Includes JSX prop sorting (reserved props first,
+callbacks last).
+
+**Peer dependencies:** `eslint-plugin-react`, `eslint-plugin-react-hooks`
+
+**Rules-only usage:**
+
+```javascript
+import reactRules from 'eslint-config-loderunner/react/rules';
+
+export default [
+  // ... your configs
+  reactRules,
+];
+```
+
+**Full config usage:**
+
+```javascript
+import reactConfig from 'eslint-config-loderunner/react';
+
+export default [
+  // ... your configs
+  ...reactConfig,
+];
+```
+
+### import
+
+Import ordering and organization rules. Enforces alphabetical sorting with
+newlines between groups.
+
+**Peer dependencies:** `eslint-plugin-import`
+
+**Rules-only usage:**
+
+```javascript
+import importRules from 'eslint-config-loderunner/import/rules';
+
+export default [
+  // ... your configs
+  importRules,
+];
+```
+
+**Full config usage:**
+
+```javascript
+import importConfig from 'eslint-config-loderunner/import';
+
+export default [
+  // ... your configs
+  ...importConfig,
+];
+```
+
+### jsdoc
+
+JSDoc documentation rules. Requires JSDoc for public exports, enforces
+consistent formatting, and disallows types in JSDoc (prefer TypeScript).
+
+**Peer dependencies:** `eslint-plugin-jsdoc`
+
+**Rules-only usage:**
+
+```javascript
+import jsdocRules from 'eslint-config-loderunner/jsdoc/rules';
+
+export default [
+  // ... your configs
+  jsdocRules,
+];
+```
+
+**Full config usage:**
+
+```javascript
+import jsdocConfig from 'eslint-config-loderunner/jsdoc';
+
+export default [
+  // ... your configs
+  ...jsdocConfig,
+];
+```
+
+### vitest
+
+Vitest-specific rules for test files. Relaxes strict TypeScript rules for test
+flexibility (allows `any`, unbound methods, etc.).
+
+**Peer dependencies:** `@vitest/eslint-plugin`
+
+**Rules-only usage:**
+
+```javascript
+import vitestRules from 'eslint-config-loderunner/vitest/rules';
+
+export default [
+  // ... your configs
   {
-    files: ['**/*.test.ts'],
-    ...vitestPlugin.configs.recommended,
-    rules: {
-      ...vitestPlugin.configs.recommended.rules,
-      ...configs.vitest.rules,
-    },
+    files: ['**/*.test.{ts,tsx}'],
+    ...vitestRules,
   },
 ];
 ```
 
----
+**Full config usage:**
 
-### `jsdoc`
-
-JSDoc documentation rules for library projects.
-
-**Rules:**
-- `jsdoc/require-jsdoc` - Require JSDoc for public exports
-- `jsdoc/check-alignment` - Check JSDoc alignment
-- `jsdoc/check-indentation` - Check JSDoc indentation
-- `jsdoc/multiline-blocks` - Enforce multiline JSDoc style
-- `jsdoc/no-types` - Disallow types in JSDoc (use TypeScript)
-- `jsdoc/require-description` - Require description in JSDoc
-
-**Peer dependencies:**
-```bash
-pnpm add -D eslint-plugin-jsdoc
-```
-
----
-
-### `formatting`
-
-Formatting rules that must be applied **last** in your config array, after any formatter configs like `eslint-config-prettier`.
-
-**Rules:**
-- `curly: ['error', 'all']` - Require braces for all control statements
-
-**Why last?** Prettier configs disable `curly` to avoid conflicts. This re-enables it after.
-
-**Peer dependencies:**
-```bash
-pnpm add -D eslint-config-prettier
-```
-
----
-
-## Example Configurations
-
-### Node.js + TypeScript
-
-```js
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import prettierConfig from 'eslint-config-prettier';
-import { configs } from 'eslint-config-loderunner';
+```javascript
+import vitestConfig from 'eslint-config-loderunner/vitest';
 
 export default [
-  { files: ['**/*.{js,ts}'] },
-  { ignores: ['dist/**/*'] },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: {
-          allowDefaultProject: ['*.config.js'],
-        },
-      },
-    },
-  },
-  configs.base,
-  configs.typescript,
-  configs.importOrder,
-  prettierConfig,
-  configs.formatting,
+  // ... your configs
+  ...vitestConfig,
 ];
 ```
 
-### React + TypeScript
+### formatting
 
-```js
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import prettierConfig from 'eslint-config-prettier';
-import { configs } from 'eslint-config-loderunner';
+Formatting rules that work with Prettier. Includes `eslint-config-prettier` and
+re-enables formatting rules like `curly` (require braces). **Must be applied
+last** in your config array.
+
+**Peer dependencies:** `eslint-config-prettier`
+
+**Rules-only usage:**
+
+```javascript
+import formattingRules from 'eslint-config-loderunner/formatting/rules';
 
 export default [
-  { files: ['**/*.{js,ts,tsx}'] },
-  { ignores: ['dist/**/*'] },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: {
-          allowDefaultProject: ['*.config.js'],
-        },
-      },
-    },
-  },
-  {
-    settings: {
-      react: { version: 'detect' },
-    },
-  },
-  reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat['jsx-runtime'],
-  reactHooks.configs.flat.recommended,
-  configs.base,
-  configs.typescript,
-  configs.importOrder,
-  configs.react,
-  prettierConfig,
-  configs.formatting,
+  // ... your configs
+  formattingRules, // Must be last
 ];
 ```
 
-### Library with JSDoc
+**Full config usage:**
 
-```js
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import prettierConfig from 'eslint-config-prettier';
-import { configs } from 'eslint-config-loderunner';
+```javascript
+import formattingConfig from 'eslint-config-loderunner/formatting';
 
 export default [
-  { files: ['**/*.{js,ts}'] },
-  { ignores: ['dist/**/*'] },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: {
-          allowDefaultProject: ['*.config.js'],
-        },
-      },
-    },
-  },
-  configs.base,
-  configs.typescript,
-  configs.importOrder,
-  configs.jsdoc,
-  prettierConfig,
-  configs.formatting,
+  // ... your configs
+  ...formattingConfig, // Must be last
 ];
 ```
 
-## License
+## Typical Project Setups
 
-MIT
+### Vite + React Frontend
+
+```javascript
+import baseConfig from 'eslint-config-loderunner/base';
+import typescriptConfig from 'eslint-config-loderunner/typescript';
+import reactConfig from 'eslint-config-loderunner/react';
+import importConfig from 'eslint-config-loderunner/import';
+import formattingConfig from 'eslint-config-loderunner/formatting';
+
+export default [
+  { ignores: ['dist', 'node_modules'] },
+  ...baseConfig,
+  ...typescriptConfig,
+  ...reactConfig,
+  ...importConfig,
+  ...formattingConfig,
+];
+```
+
+### Node.js Backend/CLI
+
+```javascript
+import baseConfig from 'eslint-config-loderunner/base';
+import typescriptConfig from 'eslint-config-loderunner/typescript';
+import importConfig from 'eslint-config-loderunner/import';
+import formattingConfig from 'eslint-config-loderunner/formatting';
+
+export default [
+  { ignores: ['node_modules', 'dist'] },
+  ...baseConfig,
+  ...typescriptConfig,
+  ...importConfig,
+  ...formattingConfig,
+];
+```
+
+### Library
+
+```javascript
+import baseConfig from 'eslint-config-loderunner/base';
+import typescriptConfig from 'eslint-config-loderunner/typescript';
+import importConfig from 'eslint-config-loderunner/import';
+import jsdocConfig from 'eslint-config-loderunner/jsdoc';
+import vitestConfig from 'eslint-config-loderunner/vitest';
+import formattingConfig from 'eslint-config-loderunner/formatting';
+
+export default [
+  { ignores: ['node_modules', 'dist'] },
+  ...baseConfig,
+  ...typescriptConfig,
+  ...importConfig,
+  ...jsdocConfig,
+  ...vitestConfig,
+  ...formattingConfig,
+];
+```

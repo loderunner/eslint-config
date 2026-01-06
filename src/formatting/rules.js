@@ -4,10 +4,15 @@
  *
  * This re-enables formatting rules that prettifier configs typically disable.
  *
+ * Rules included:
+ * - `curly`: Require braces around all control flow statements
+ *
  * @type {import('eslint').Linter.Config}
  */
-export const formatting = {
+const formattingRules = {
   rules: {
     curly: ['error', 'all'],
   },
 };
+
+export default formattingRules;
