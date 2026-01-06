@@ -1,5 +1,3 @@
-import js from "@eslint/js";
-import globals from "globals";
 import pluginVue from "eslint-plugin-vue";
 import vueRules from './rules.js';
 
@@ -11,25 +9,6 @@ import vueRules from './rules.js';
  */
 
 const vueConfig = [
-  {
-    files: ["**/*.{js,mjs,cjs,vue}"],
-    plugins: { js },
-    extends: ["js/recommended"],
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,vue}"],
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-  },
-  {
-    name: "app/files-to-ignore",
-    ignores: ["**/dist/**", "**/dist-ssr/**", "**/coverage/**", "**/assets/**"],
-  },
-  ...pluginVue.configs["flat/essential"],
   ...pluginVue.configs["flat/recommended"],
   {
     rules: {
