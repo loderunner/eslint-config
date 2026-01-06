@@ -1,6 +1,6 @@
 import tseslint from 'typescript-eslint';
 
-import typescriptRules from './rules';
+import typescriptRules from './rules.js';
 
 /**
  * TypeScript ESLint config with recommended type-checked rules and custom rules.

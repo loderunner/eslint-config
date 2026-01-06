@@ -1,7 +1,7 @@
-import baseConfig from './src/base/config';
-import formattingConfig from './src/formatting/config';
-import importConfig from './src/import/config';
-import jsdocConfig from './src/jsdoc/config';
+import baseConfig from './src/base/config.js';
+import formattingConfig from './src/formatting/config.js';
+import importConfig from './src/import/config.js';
+import jsdocConfig from './src/jsdoc/config.js';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [

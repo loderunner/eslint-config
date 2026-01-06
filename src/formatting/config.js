@@ -1,6 +1,6 @@
 import prettierConfig from 'eslint-config-prettier';
 
-import formattingRules from './rules';
+import formattingRules from './rules.js';
 
 /**
  * Formatting ESLint config that should be applied LAST in your config array.

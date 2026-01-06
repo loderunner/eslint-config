@@ -1,7 +1,7 @@
 import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 
-import reactRules from './rules';
+import reactRules from './rules.js';
 
 /**
  * React ESLint config with recommended rules and custom rules.

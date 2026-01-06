@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, and more",
   "type": "module",
-  "main": "./src/index.js",
   "exports": {
     "./base": "./src/base/config.js",
     "./base/rules": "./src/base/rules.js",

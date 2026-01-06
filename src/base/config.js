@@ -1,6 +1,6 @@
 import pluginJs from '@eslint/js';
 
-import baseRules from './rules';
+import baseRules from './rules.js';
 
 /**
  * Base ESLint config with recommended JavaScript rules and custom rules.

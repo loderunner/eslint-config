@@ -1,6 +1,6 @@
 import vitestPlugin from '@vitest/eslint-plugin';
 
-import vitestRules from './rules';
+import vitestRules from './rules.js';
 
 /**
  * Vitest ESLint config for test files with recommended rules and custom rules.

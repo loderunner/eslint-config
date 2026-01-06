@@ -1,6 +1,6 @@
 import jsdoc from 'eslint-plugin-jsdoc';
 
-import jsdocRules from './rules';
+import jsdocRules from './rules.js';
 
 /**
  * JSDoc ESLint config with plugin, settings, and custom rules.

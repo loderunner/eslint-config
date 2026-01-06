@@ -1,6 +1,6 @@
 import importPlugin from 'eslint-plugin-import';
 
-import importRules from './rules';
+import importRules from './rules.js';
 
 /**
  * Import ordering ESLint config with plugin, settings, and custom rules.
