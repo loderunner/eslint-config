@@ -8,6 +8,6 @@ import formattingRules from './rules.js';
  *
  * @type {import('eslint').Linter.Config[]}
  */
-const formattingConfig = [prettierConfig, formattingRules];
+const formattingConfig = [prettierConfig, { rules: formattingRules }];
 
 export default formattingConfig;

@@ -17,7 +17,7 @@ const importConfig = [
         node: true,
       },
     },
-    ...importRules,
+    rules: importRules,
   },
 ];
 

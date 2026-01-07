@@ -16,7 +16,7 @@ const jsdocConfig = [
         mode: 'typescript',
       },
     },
-    ...jsdocRules,
+    rules: jsdocRules,
   },
 ];
 

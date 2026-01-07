@@ -19,7 +19,7 @@ const typescriptConfig = [
       },
     },
   },
-  typescriptRules,
+  { rules: typescriptRules },
 ];
 
 export default typescriptConfig;

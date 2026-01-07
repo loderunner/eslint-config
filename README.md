@@ -47,8 +47,12 @@ imports.
 import baseRules from 'eslint-config-loderunner/base/rules';
 
 export default [
-  // ... your configs
-  baseRules,
+  {
+    files: ['**/*.{js,mjs,cjs}'],
+    rules: {
+      ...baseRules,
+    },
+  },
 ];
 ```
 
@@ -56,11 +60,14 @@ export default [
 
 ```javascript
 import baseConfig from 'eslint-config-loderunner/base';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...baseConfig,
-];
+export default defineConfig([
+  {
+    files: ['**/*.{js,mjs,cjs}'],
+    extends: [baseConfig],
+  },
+]);
 ```
 
 ### typescript
@@ -76,8 +83,12 @@ expressions, exhaustive switch checks, and consistent type imports.
 import typescriptRules from 'eslint-config-loderunner/typescript/rules';
 
 export default [
-  // ... your configs
-  typescriptRules,
+  {
+    files: ['**/*.{ts,tsx}'],
+    rules: {
+      ...typescriptRules,
+    },
+  },
 ];
 ```
 
@@ -85,11 +96,14 @@ export default [
 
 ```javascript
 import typescriptConfig from 'eslint-config-loderunner/typescript';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...typescriptConfig,
-];
+export default defineConfig([
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [typescriptConfig],
+  },
+]);
 ```
 
 ### react
@@ -105,8 +119,12 @@ callbacks last).
 import reactRules from 'eslint-config-loderunner/react/rules';
 
 export default [
-  // ... your configs
-  reactRules,
+  {
+    files: ['**/*.{jsx,tsx}'],
+    rules: {
+      ...reactRules,
+    },
+  },
 ];
 ```
 
@@ -114,11 +132,14 @@ export default [
 
 ```javascript
 import reactConfig from 'eslint-config-loderunner/react';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...reactConfig,
-];
+export default defineConfig([
+  {
+    files: ['**/*.{jsx,tsx}'],
+    extends: [reactConfig],
+  },
+]);
 ```
 
 ### Vue
@@ -133,8 +154,12 @@ Vue.js rules.
 import vueRules from 'eslint-config-loderunner/vue/rules';
 
 export default [
-  // ... your configs
-  vueRules,
+  {
+    files: ['**/*.vue'],
+    rules: {
+      ...vueRules,
+    },
+  },
 ];
 ```
 
@@ -142,11 +167,14 @@ export default [
 
 ```javascript
 import vueConfig from 'eslint-config-loderunner/vue';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...vueConfig,
-];
+export default defineConfig([
+  {
+    files: ['**/*.vue'],
+    extends: [vueConfig],
+  },
+]);
 ```
 
 ### import
@@ -162,8 +190,12 @@ newlines between groups.
 import importRules from 'eslint-config-loderunner/import/rules';
 
 export default [
-  // ... your configs
-  importRules,
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
+    rules: {
+      ...importRules,
+    },
+  },
 ];
 ```
 
@@ -171,11 +203,14 @@ export default [
 
 ```javascript
 import importConfig from 'eslint-config-loderunner/import';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...importConfig,
-];
+export default defineConfig([
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
+    extends: [importConfig],
+  },
+]);
 ```
 
 ### jsdoc
@@ -191,8 +226,12 @@ consistent formatting, and disallows types in JSDoc (prefer TypeScript).
 import jsdocRules from 'eslint-config-loderunner/jsdoc/rules';
 
 export default [
-  // ... your configs
-  jsdocRules,
+  {
+    files: ['**/*.{js,ts}'],
+    rules: {
+      ...jsdocRules,
+    },
+  },
 ];
 ```
 
@@ -200,11 +239,14 @@ export default [
 
 ```javascript
 import jsdocConfig from 'eslint-config-loderunner/jsdoc';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...jsdocConfig,
-];
+export default defineConfig([
+  {
+    files: ['**/*.{js,ts}'],
+    extends: [jsdocConfig],
+  },
+]);
 ```
 
 ### vitest
@@ -220,10 +262,11 @@ flexibility (allows `any`, unbound methods, etc.).
 import vitestRules from 'eslint-config-loderunner/vitest/rules';
 
 export default [
-  // ... your configs
   {
-    files: ['**/*.test.{ts,tsx}'],
-    ...vitestRules,
+    files: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
+    rules: {
+      ...vitestRules,
+    },
   },
 ];
 ```
@@ -232,11 +275,14 @@ export default [
 
 ```javascript
 import vitestConfig from 'eslint-config-loderunner/vitest';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...vitestConfig,
-];
+export default defineConfig([
+  {
+    files: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
+    extends: [vitestConfig],
+  },
+]);
 ```
 
 ### formatting
@@ -253,8 +299,13 @@ last** in your config array.
 import formattingRules from 'eslint-config-loderunner/formatting/rules';
 
 export default [
-  // ... your configs
-  formattingRules, // Must be last
+  // ... your other configs first
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
+    rules: {
+      ...formattingRules, // Must be last
+    },
+  },
 ];
 ```
 
@@ -262,11 +313,15 @@ export default [
 
 ```javascript
 import formattingConfig from 'eslint-config-loderunner/formatting';
+import { defineConfig } from 'eslint/config';
 
-export default [
-  // ... your configs
-  ...formattingConfig, // Must be last
-];
+export default defineConfig([
+  // ... your other configs first
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
+    extends: [formattingConfig], // Must be last
+  },
+]);
 ```
 
 ## Example Project Configurations
@@ -281,6 +336,7 @@ import importConfig from 'eslint-config-loderunner/import';
 import formattingConfig from 'eslint-config-loderunner/formatting';
 
 export default [
+  { files: ['src/**/*.{js,jsx,ts,tsx}'] },
   { ignores: ['dist', 'node_modules'] },
   ...baseConfig,
   ...typescriptConfig,
@@ -299,6 +355,7 @@ import importConfig from 'eslint-config-loderunner/import';
 import formattingConfig from 'eslint-config-loderunner/formatting';
 
 export default [
+  { files: ['src/**/*.{js,ts}'] },
   { ignores: ['node_modules', 'dist'] },
   ...baseConfig,
   ...typescriptConfig,
@@ -318,6 +375,7 @@ import vitestConfig from 'eslint-config-loderunner/vitest';
 import formattingConfig from 'eslint-config-loderunner/formatting';
 
 export default [
+  { files: ['src/**/*.{js,ts}'] },
   { ignores: ['node_modules', 'dist'] },
   ...baseConfig,
   ...typescriptConfig,

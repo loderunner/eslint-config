@@ -6,14 +6,12 @@
  * - `no-var`: Disallow the use of `var`
  * - `no-duplicate-imports`: Disallow duplicate imports from the same module
  *
- * @type {import('eslint').Linter.Config}
+ * @type {import('eslint').Linter.RulesRecord}
  */
 const baseRules = {
-  rules: {
-    eqeqeq: 'error',
-    'no-var': 'error',
-    'no-duplicate-imports': 'error',
-  },
+  eqeqeq: 'error',
+  'no-var': 'error',
+  'no-duplicate-imports': 'error',
 };
 
 export default baseRules;

@@ -4,19 +4,17 @@
  * Rules included:
  * - `import/order`: Enforce sorted imports with newlines between groups
  *
- * @type {import('eslint').Linter.Config}
+ * @type {import('eslint').Linter.RulesRecord}
  */
 const importRules = {
-  rules: {
-    'import/order': [
-      'warn',
-      {
-        'newlines-between': 'always',
-        named: true,
-        alphabetize: { order: 'asc' },
-      },
-    ],
-  },
+  'import/order': [
+    'warn',
+    {
+      'newlines-between': 'always',
+      named: true,
+      alphabetize: { order: 'asc' },
+    },
+  ],
 };
 
 export default importRules;

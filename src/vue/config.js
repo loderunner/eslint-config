@@ -1,4 +1,5 @@
-import pluginVue from "eslint-plugin-vue";
+import pluginVue from 'eslint-plugin-vue';
+
 import vueRules from './rules.js';
 
 /**
@@ -9,12 +10,8 @@ import vueRules from './rules.js';
  */
 
 const vueConfig = [
-  ...pluginVue.configs["flat/recommended"],
-  {
-    rules: {
-      ...vueRules.rules,
-    },
-  },
+  ...pluginVue.configs['flat/recommended'],
+  { rules: vueRules },
 ];
 
 export default vueConfig;

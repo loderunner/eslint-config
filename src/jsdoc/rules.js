@@ -9,30 +9,28 @@
  * - `jsdoc/no-types`: Disallow types in JSDoc (prefer TypeScript)
  * - `jsdoc/require-description`: Require a description in JSDoc blocks
  *
- * @type {import('eslint').Linter.Config}
+ * @type {import('eslint').Linter.RulesRecord}
  */
 const jsdocRules = {
-  rules: {
-    'jsdoc/require-jsdoc': [
-      'warn',
-      {
-        publicOnly: true,
-        require: {
-          FunctionDeclaration: true,
-          MethodDefinition: true,
-          ClassDeclaration: true,
-        },
-        checkConstructors: true,
-        checkGetters: true,
-        checkSetters: false,
+  'jsdoc/require-jsdoc': [
+    'warn',
+    {
+      publicOnly: true,
+      require: {
+        FunctionDeclaration: true,
+        MethodDefinition: true,
+        ClassDeclaration: true,
       },
-    ],
-    'jsdoc/check-alignment': 'warn',
-    'jsdoc/check-indentation': 'warn',
-    'jsdoc/multiline-blocks': 'warn',
-    'jsdoc/no-types': 'warn',
-    'jsdoc/require-description': 'warn',
-  },
+      checkConstructors: true,
+      checkGetters: true,
+      checkSetters: false,
+    },
+  ],
+  'jsdoc/check-alignment': 'warn',
+  'jsdoc/check-indentation': 'warn',
+  'jsdoc/multiline-blocks': 'warn',
+  'jsdoc/no-types': 'warn',
+  'jsdoc/require-description': 'warn',
 };
 
 export default jsdocRules;

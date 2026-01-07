@@ -8,6 +8,6 @@ import baseRules from './rules.js';
  *
  * @type {import('eslint').Linter.Config[]}
  */
-const baseConfig = [pluginJs.configs.recommended, baseRules];
+const baseConfig = [pluginJs.configs.recommended, { rules: baseRules }];
 
 export default baseConfig;

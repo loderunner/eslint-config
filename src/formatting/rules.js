@@ -7,12 +7,10 @@
  * Rules included:
  * - `curly`: Require braces around all control flow statements
  *
- * @type {import('eslint').Linter.Config}
+ * @type {import('eslint').Linter.RulesRecord}
  */
 const formattingRules = {
-  rules: {
-    curly: ['error', 'all'],
-  },
+  curly: ['error', 'all'],
 };
 
 export default formattingRules;

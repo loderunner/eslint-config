@@ -18,7 +18,7 @@ const reactConfig = [
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
   reactHooks.configs.flat.recommended,
-  reactRules,
+  { rules: reactRules },
 ];
 
 export default reactConfig;

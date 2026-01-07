@@ -4,12 +4,10 @@
  * Rules changed:
  * - `vue/multi-word-component-names`: Disabled for flexibility
  *
- * @type {import('eslint').Linter.Config}
+ * @type {import('eslint').Linter.RulesRecord}
  */
 const vueRules = {
-    rules: {
-      'vue/multi-word-component-names': 'off',
-    },
-  };
+  'vue/multi-word-component-names': 'off',
+};
 
 export default vueRules;

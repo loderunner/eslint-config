@@ -4,19 +4,10 @@ import vitestRules from './rules.js';
 
 /**
  * Vitest ESLint config for test files with recommended rules and custom rules.
- * Includes @vitest/eslint-plugin recommended config, scoped to test files.
+ * Includes @vitest/eslint-plugin recommended config.
  *
  * @type {import('eslint').Linter.Config[]}
  */
-const vitestConfig = [
-  {
-    files: ['**/*.test.{ts,tsx}'],
-    ...vitestPlugin.configs.recommended,
-    rules: {
-      ...vitestPlugin.configs.recommended.rules,
-      ...vitestRules.rules,
-    },
-  },
-];
+const vitestConfig = [vitestPlugin.configs.recommended, { rules: vitestRules }];
 
 export default vitestConfig;
