@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-loderunner",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, and more",
   "type": "module",
   "exports": {
@@ -57,7 +57,7 @@
     "eslint-plugin-jsdoc": "^50.0.0",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-vue": "^10.6.2",
+    "eslint-plugin-vue": "^10.6.0",
     "prettier": "^3.7.4",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.0.0"
@@ -71,7 +71,7 @@
     "eslint-plugin-jsdoc": "^50.0.0",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-vue": "^10.6.2",
+    "eslint-plugin-vue": "^10.6.0",
     "typescript-eslint": "^8.0.0"
   },
   "peerDependenciesMeta": {
