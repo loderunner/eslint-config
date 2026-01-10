@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-loderunner",
   "version": "3.0.0",
-  "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, and more",
+  "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, Vue, and more",
   "type": "module",
   "exports": {
     "./base": "./src/base/config.js",
@@ -14,6 +14,8 @@
     "./react/rules": "./src/react/rules.js",
     "./vitest": "./src/vitest/config.js",
     "./vitest/rules": "./src/vitest/rules.js",
+    "./vue": "./src/vue/config.js",
+    "./vue/rules": "./src/vue/rules.js",
     "./jsdoc": "./src/jsdoc/config.js",
     "./jsdoc/rules": "./src/jsdoc/rules.js",
     "./formatting": "./src/formatting/config.js",
@@ -28,6 +30,7 @@
     "typescript",
     "react",
     "vitest",
+    "vue",
     "flat-config"
   ],
   "author": "Charles Francoise",

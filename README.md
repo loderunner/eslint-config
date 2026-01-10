@@ -20,6 +20,7 @@ with your own setup).
 - [Example Project Configurations](#example-project-configurations)
   - [Vite + React Frontend](#vite--react-frontend)
   - [Node.js Backend/CLI](#nodejs-backendcli)
+  - [Vue.js](#vuejs)
   - [Library](#library)
 
 ## Installation
@@ -359,6 +360,35 @@ export default [
   { ignores: ['node_modules', 'dist'] },
   ...baseConfig,
   ...typescriptConfig,
+  ...importConfig,
+  ...formattingConfig,
+];
+```
+
+### Vue.js
+
+```javascript
+import globals from "globals";
+import baseConfig from 'eslint-config-loderunner/base';
+import vueConfig from 'eslint-config-loderunner/vue';
+import importConfig from 'eslint-config-loderunner/import';
+import formattingConfig from 'eslint-config-loderunner/formatting';
+
+export default [
+  {
+    files: ["src/**/*.{js,mjs,cjs,vue}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+  { files: ['src/**/*.{js,mjs,cjs,vue}'] },
+  { ignores: ['dist', 'node_modules'] },
+  ...baseConfig,
+  ...typescriptConfig,
+  ...vueConfig,
   ...importConfig,
   ...formattingConfig,
 ];
