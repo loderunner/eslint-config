@@ -368,7 +368,7 @@ export default [
 ### Vue.js
 
 ```javascript
-import globals from "globals";
+import globals from 'globals';
 import baseConfig from 'eslint-config-loderunner/base';
 import vueConfig from 'eslint-config-loderunner/vue';
 import importConfig from 'eslint-config-loderunner/import';
@@ -376,7 +376,7 @@ import formattingConfig from 'eslint-config-loderunner/formatting';
 
 export default [
   {
-    files: ["src/**/*.{js,mjs,cjs,vue}"],
+    files: ['src/**/*.{js,mjs,cjs,vue}'],
     languageOptions: {
       globals: {
         ...globals.browser,
