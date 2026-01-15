@@ -45,16 +45,18 @@ imports.
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import baseRules from 'eslint-config-loderunner/base/rules';
 
-export default [
+export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs}'],
     rules: {
       ...baseRules,
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -81,16 +83,18 @@ expressions, exhaustive switch checks, and consistent type imports.
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import typescriptRules from 'eslint-config-loderunner/typescript/rules';
 
-export default [
+export default defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     rules: {
       ...typescriptRules,
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -117,16 +121,18 @@ callbacks last).
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import reactRules from 'eslint-config-loderunner/react/rules';
 
-export default [
+export default defineConfig([
   {
     files: ['**/*.{jsx,tsx}'],
     rules: {
       ...reactRules,
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -152,16 +158,18 @@ Vue.js rules.
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import vueRules from 'eslint-config-loderunner/vue/rules';
 
-export default [
+export default defineConfig([
   {
     files: ['**/*.vue'],
     rules: {
       ...vueRules,
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -188,16 +196,18 @@ newlines between groups.
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import importRules from 'eslint-config-loderunner/import/rules';
 
-export default [
+export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     rules: {
       ...importRules,
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -224,16 +234,18 @@ consistent formatting, and disallows types in JSDoc (prefer TypeScript).
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import jsdocRules from 'eslint-config-loderunner/jsdoc/rules';
 
-export default [
+export default defineConfig([
   {
     files: ['**/*.{js,ts}'],
     rules: {
       ...jsdocRules,
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -260,16 +272,18 @@ flexibility (allows `any`, unbound methods, etc.).
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import vitestRules from 'eslint-config-loderunner/vitest/rules';
 
-export default [
+export default defineConfig([
   {
     files: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
     rules: {
       ...vitestRules,
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -297,9 +311,11 @@ last** in your config array.
 **Rules-only usage:**
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import formattingRules from 'eslint-config-loderunner/formatting/rules';
 
-export default [
+export default defineConfig([
   // ... your other configs first
   {
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
@@ -307,7 +323,7 @@ export default [
       ...formattingRules, // Must be last
     },
   },
-];
+]);
 ```
 
 **Full config usage:**
@@ -330,51 +346,58 @@ export default defineConfig([
 ### Vite + React Frontend
 
 ```javascript
-import baseConfig from 'eslint-config-loderunner/base';
-import typescriptConfig from 'eslint-config-loderunner/typescript';
-import reactConfig from 'eslint-config-loderunner/react';
-import importConfig from 'eslint-config-loderunner/import';
-import formattingConfig from 'eslint-config-loderunner/formatting';
+import { defineConfig } from 'eslint/config';
 
-export default [
+import baseConfig from 'eslint-config-loderunner/base';
+import formattingConfig from 'eslint-config-loderunner/formatting';
+import importConfig from 'eslint-config-loderunner/import';
+import reactConfig from 'eslint-config-loderunner/react';
+import typescriptConfig from 'eslint-config-loderunner/typescript';
+
+export default defineConfig([
   { files: ['src/**/*.{js,jsx,ts,tsx}'] },
   { ignores: ['dist', 'node_modules'] },
-  ...baseConfig,
-  ...typescriptConfig,
-  ...reactConfig,
-  ...importConfig,
-  ...formattingConfig,
-];
+  { extends: [baseConfig] },
+  { extends: [typescriptConfig] },
+  { extends: [reactConfig] },
+  { extends: [importConfig] },
+  { extends: [formattingConfig] },
+]);
 ```
 
 ### Node.js Backend/CLI
 
 ```javascript
-import baseConfig from 'eslint-config-loderunner/base';
-import typescriptConfig from 'eslint-config-loderunner/typescript';
-import importConfig from 'eslint-config-loderunner/import';
-import formattingConfig from 'eslint-config-loderunner/formatting';
+import { defineConfig } from 'eslint/config';
 
-export default [
+import baseConfig from 'eslint-config-loderunner/base';
+import formattingConfig from 'eslint-config-loderunner/formatting';
+import importConfig from 'eslint-config-loderunner/import';
+import typescriptConfig from 'eslint-config-loderunner/typescript';
+
+export default defineConfig([
   { files: ['src/**/*.{js,ts}'] },
   { ignores: ['node_modules', 'dist'] },
-  ...baseConfig,
-  ...typescriptConfig,
-  ...importConfig,
-  ...formattingConfig,
-];
+  { extends: [baseConfig] },
+  { extends: [typescriptConfig] },
+  { extends: [importConfig] },
+  { extends: [formattingConfig] },
+]);
 ```
 
 ### Vue.js
 
 ```javascript
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import baseConfig from 'eslint-config-loderunner/base';
-import vueConfig from 'eslint-config-loderunner/vue';
-import importConfig from 'eslint-config-loderunner/import';
-import formattingConfig from 'eslint-config-loderunner/formatting';
 
-export default [
+import baseConfig from 'eslint-config-loderunner/base';
+import formattingConfig from 'eslint-config-loderunner/formatting';
+import importConfig from 'eslint-config-loderunner/import';
+import typescriptConfig from 'eslint-config-loderunner/typescript';
+import vueConfig from 'eslint-config-loderunner/vue';
+
+export default defineConfig([
   {
     files: ['src/**/*.{js,mjs,cjs,vue}'],
     languageOptions: {
@@ -384,34 +407,35 @@ export default [
       },
     },
   },
-  { files: ['src/**/*.{js,mjs,cjs,vue}'] },
   { ignores: ['dist', 'node_modules'] },
-  ...baseConfig,
-  ...typescriptConfig,
-  ...vueConfig,
-  ...importConfig,
-  ...formattingConfig,
-];
+  { extends: [baseConfig] },
+  { extends: [typescriptConfig] },
+  { extends: [vueConfig] },
+  { extends: [importConfig] },
+  { extends: [formattingConfig] },
+]);
 ```
 
 ### Library
 
 ```javascript
+import { defineConfig } from 'eslint/config';
+
 import baseConfig from 'eslint-config-loderunner/base';
-import typescriptConfig from 'eslint-config-loderunner/typescript';
+import formattingConfig from 'eslint-config-loderunner/formatting';
 import importConfig from 'eslint-config-loderunner/import';
 import jsdocConfig from 'eslint-config-loderunner/jsdoc';
+import typescriptConfig from 'eslint-config-loderunner/typescript';
 import vitestConfig from 'eslint-config-loderunner/vitest';
-import formattingConfig from 'eslint-config-loderunner/formatting';
 
-export default [
+export default defineConfig([
   { files: ['src/**/*.{js,ts}'] },
   { ignores: ['node_modules', 'dist'] },
-  ...baseConfig,
-  ...typescriptConfig,
-  ...importConfig,
-  ...jsdocConfig,
-  ...vitestConfig,
-  ...formattingConfig,
-];
+  { extends: [baseConfig] },
+  { extends: [typescriptConfig] },
+  { extends: [importConfig] },
+  { extends: [jsdocConfig] },
+  { extends: [vitestConfig] },
+  { extends: [formattingConfig] },
+]);
 ```
