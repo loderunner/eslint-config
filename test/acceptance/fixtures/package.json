@@ -1,0 +1,24 @@
+{
+  "name": "acceptance-test-fixture",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "@vitest/eslint-plugin": "^1.6.0",
+    "eslint": "^9.39.0",
+    "eslint-config-loderunner": "file:./eslint-config-loderunner.tgz",
+    "eslint-config-prettier": "^10.1.0",
+    "eslint-import-resolver-typescript": "^4.4.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^62.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-vue": "^10.6.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.53.0",
+    "vitest": "^2.0.0"
+  }
+}
