@@ -25,7 +25,7 @@ describe('acceptance test', () => {
     tarballPath = join(process.cwd(), tarball);
 
     // Start container
-    container = await new GenericContainer('node:22-slim')
+    container = await new GenericContainer('node:24.10-slim')
       .withCommand(['sleep', 'infinity'])
       .withCopyFilesToContainer([
         {
