@@ -5,6 +5,10 @@ on:
     tags: ['v*']
   workflow_dispatch: {}
 
+permissions:
+  id-token: write # OIDC token
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -19,4 +23,3 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: pnpm install --no-lockfile
       - run: pnpm publish
-        shell: sh
