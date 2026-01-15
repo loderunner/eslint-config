@@ -7,6 +7,11 @@ Each config is available in two forms: **full configs** (includes plugins and
 recommended rules) and **rules-only** exports (just the custom rules, for mixing
 with your own setup).
 
+Each config module is independent and has its own peer dependencies that you
+must install separately. This keeps your project lean—you only install the
+plugins you actually use. Check the **Peer dependencies** section for each
+config below and install the required packages.
+
 - [Installation](#installation)
 - [Configs](#configs)
   - [base](#base)
@@ -40,7 +45,11 @@ yarn add --dev eslint-config-loderunner
 Core JavaScript rules including strict equality, no `var`, and no duplicate
 imports.
 
-**Peer dependencies:** `@eslint/js`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev @eslint/js
+```
 
 **Rules-only usage:**
 
@@ -78,7 +87,11 @@ export default defineConfig([
 TypeScript rules with type-checking enabled. Includes strict boolean
 expressions, exhaustive switch checks, and consistent type imports.
 
-**Peer dependencies:** `typescript-eslint`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev typescript-eslint
+```
 
 **Rules-only usage:**
 
@@ -116,7 +129,11 @@ export default defineConfig([
 React and React Hooks rules. Includes JSX prop sorting (reserved props first,
 callbacks last).
 
-**Peer dependencies:** `eslint-plugin-react`, `eslint-plugin-react-hooks`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev eslint-plugin-react eslint-plugin-react-hooks
+```
 
 **Rules-only usage:**
 
@@ -153,7 +170,11 @@ export default defineConfig([
 
 Vue.js rules.
 
-**Peer dependencies:** `eslint-plugin-vue`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev eslint-plugin-vue
+```
 
 **Rules-only usage:**
 
@@ -191,7 +212,11 @@ export default defineConfig([
 Import ordering and organization rules. Enforces alphabetical sorting with
 newlines between groups.
 
-**Peer dependencies:** `eslint-plugin-import`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev eslint-plugin-import
+```
 
 **Rules-only usage:**
 
@@ -229,7 +254,11 @@ export default defineConfig([
 JSDoc documentation rules. Requires JSDoc for public exports, enforces
 consistent formatting, and disallows types in JSDoc (prefer TypeScript).
 
-**Peer dependencies:** `eslint-plugin-jsdoc`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev eslint-plugin-jsdoc
+```
 
 **Rules-only usage:**
 
@@ -267,7 +296,11 @@ export default defineConfig([
 Vitest-specific rules for test files. Relaxes strict TypeScript rules for test
 flexibility (allows `any`, unbound methods, etc.).
 
-**Peer dependencies:** `@vitest/eslint-plugin`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev @vitest/eslint-plugin
+```
 
 **Rules-only usage:**
 
@@ -306,7 +339,11 @@ Formatting rules that work with Prettier. Includes `eslint-config-prettier` and
 re-enables formatting rules like `curly` (require braces). **Must be applied
 last** in your config array.
 
-**Peer dependencies:** `eslint-config-prettier`
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev eslint-config-prettier
+```
 
 **Rules-only usage:**
 
