@@ -218,6 +218,15 @@ newlines between groups.
 pnpm add --save-dev eslint-plugin-import
 ```
 
+**TypeScript support:**
+
+For TypeScript projects, install the TypeScript resolver and it will be
+auto-detected:
+
+```bash
+pnpm add --save-dev eslint-import-resolver-typescript
+```
+
 **Rules-only usage:**
 
 ```javascript
