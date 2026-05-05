@@ -17,7 +17,7 @@ config below and install the required packages.
   - [base](#base)
   - [typescript](#typescript)
   - [react](#react)
-  - [Vue](#vue)
+  - [vue](#vue)
   - [import](#import)
   - [jsdoc](#jsdoc)
   - [vitest](#vitest)
@@ -166,7 +166,7 @@ export default defineConfig([
 ]);
 ```
 
-### Vue
+### vue
 
 Vue.js rules.
 
