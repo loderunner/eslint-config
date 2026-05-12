@@ -11,6 +11,7 @@
  * - `@typescript-eslint/no-misused-promises`: Catch misused promises (void returns allowed)
  * - `@typescript-eslint/consistent-type-imports`: Enforce `import type` syntax
  * - `@typescript-eslint/require-await`: Disabled
+ * - `@typescript-eslint/no-deprecated`: Warn on using properties marked with `@deprecated`
  *
  * @type {import('eslint').Linter.RulesRecord}
  */
@@ -61,6 +62,7 @@ const typescriptRules = {
     },
   ],
   '@typescript-eslint/require-await': 'off',
+  '@typescript-eslint/no-deprecated': 'warn',
 };
 
 export default typescriptRules;

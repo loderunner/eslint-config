@@ -85,7 +85,8 @@ export default defineConfig([
 ### typescript
 
 TypeScript rules with type-checking enabled. Includes strict boolean
-expressions, exhaustive switch checks, and consistent type imports.
+expressions, exhaustive switch checks, consistent type imports, and warnings for
+symbols marked `@deprecated` in types.
 
 **Peer dependencies:**
 
@@ -210,7 +211,7 @@ export default defineConfig([
 ### import
 
 Import ordering and organization rules. Enforces alphabetical sorting with
-newlines between groups.
+newlines between groups, and warns on deprecated imports.
 
 **Peer dependencies:**
 
