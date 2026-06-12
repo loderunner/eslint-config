@@ -5,5 +5,14 @@ updates:
     schedule:
       interval: 'daily'
     commit-message:
+      prefix: chore
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
+    commit-message:
       prefix: fix
-      prefix-development: chore
