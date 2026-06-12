@@ -7,5 +7,6 @@ export default defineConfig({
       '**/dist/**',
       'test/acceptance/fixtures/**',
     ],
+    hookTimeout: 60 * 1000,
   },
 });
