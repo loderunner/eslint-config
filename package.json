@@ -64,7 +64,7 @@
     "eslint-plugin-jsdoc": "62.0.0",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
-    "eslint-plugin-vue": "10.6.2",
+    "eslint-plugin-vue": "10.9.2",
     "globals": "17.0.0",
     "prettier": "3.8.4",
     "semantic-release": "25.0.5",
