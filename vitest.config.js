@@ -2,11 +2,6 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    exclude: [
-      '**/node_modules/**',
-      '**/dist/**',
-      'test/acceptance/fixtures/**',
-    ],
-    hookTimeout: 60 * 1000,
+    projects: ['vitest.rules.config.js', 'vitest.acceptance.config.js'],
   },
 });

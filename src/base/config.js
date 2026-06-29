@@ -1,5 +1,7 @@
 import pluginJs from '@eslint/js';
 
+import plugin from '../plugin/index.js';
+
 import baseRules from './rules.js';
 
 /**
@@ -8,6 +10,12 @@ import baseRules from './rules.js';
  *
  * @type {import('eslint').Linter.Config[]}
  */
-const baseConfig = [pluginJs.configs.recommended, { rules: baseRules }];
+const baseConfig = [
+  pluginJs.configs.recommended,
+  {
+    plugins: { loderunner: plugin },
+    rules: baseRules,
+  },
+];
 
 export default baseConfig;

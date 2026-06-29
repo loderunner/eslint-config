@@ -1,7 +1,16 @@
 export default {
   branches: ['main'],
   plugins: [
-    '@semantic-release/commit-analyzer',
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        parserOpts: {
+          headerPattern: /^(\w*)(?:\((.*)\))?(!)?: (.*)$/,
+          headerCorrespondence: ['type', 'scope', 'breaking', 'subject'],
+          breakingHeaderPattern: /^(\w*)(?:\((.*)\))?!: (.*)$/,
+        },
+      },
+    ],
     '@semantic-release/release-notes-generator',
     ['@semantic-release/npm', { npmPublish: false }],
     [

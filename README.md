@@ -22,6 +22,7 @@ config below and install the required packages.
   - [jsdoc](#jsdoc)
   - [vitest](#vitest)
   - [formatting](#formatting)
+- [Custom Rules](#custom-rules)
 - [Example Project Configurations](#example-project-configurations)
   - [Vite + React Frontend](#vite--react-frontend)
   - [Node.js Backend/CLI](#nodejs-backendcli)
@@ -57,10 +58,12 @@ pnpm add --save-dev @eslint/js
 import { defineConfig } from 'eslint/config';
 
 import baseRules from 'eslint-config-loderunner/base/rules';
+import loderunnerPlugin from 'eslint-config-loderunner/plugin';
 
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs}'],
+    plugins: { loderunner: loderunnerPlugin },
     rules: {
       ...baseRules,
     },
@@ -387,6 +390,12 @@ export default defineConfig([
   },
 ]);
 ```
+
+## Custom Rules
+
+| Rule                                                          | Description                                                                |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| [loderunner/no-chained-arrow](docs/rules/no-chained-arrow.md) | Disallow arrow functions whose expression body is itself an arrow function |
 
 ## Example Project Configurations
 
