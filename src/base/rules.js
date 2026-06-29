@@ -13,6 +13,18 @@ const baseRules = {
   eqeqeq: 'error',
   'no-var': 'error',
   'no-duplicate-imports': 'error',
+  'no-unused-vars': [
+    'error',
+    {
+      args: 'all',
+      argsIgnorePattern: '^_',
+      caughtErrors: 'all',
+      caughtErrorsIgnorePattern: '^_',
+      destructuredArrayIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+      ignoreRestSiblings: true,
+    },
+  ],
   'loderunner/no-chained-arrow': 'error',
 };
 
