@@ -55,7 +55,7 @@
   },
   "packageManager": "pnpm@10.9.0",
   "devDependencies": {
-    "@eslint/js": "9.39.4",
+    "@eslint/js": "9.39.5",
     "@semantic-release/git": "10.0.1",
     "@types/eslint": "9.6.1",
     "@types/node": "24.13.3",
