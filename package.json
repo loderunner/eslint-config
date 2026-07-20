@@ -70,7 +70,7 @@
     "eslint-plugin-vue": "10.9.2",
     "globals": "17.7.0",
     "prettier": "3.9.5",
-    "semantic-release": "25.0.7",
+    "semantic-release": "25.0.8",
     "testcontainers": "11.14.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.64.0",
