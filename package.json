@@ -69,7 +69,7 @@
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-vue": "10.10.0",
     "globals": "17.7.0",
-    "prettier": "3.9.5",
+    "prettier": "3.9.6",
     "semantic-release": "25.0.8",
     "testcontainers": "11.14.0",
     "typescript": "5.9.3",
