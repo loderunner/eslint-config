@@ -37,6 +37,7 @@ jobs:
         run: pnpm run test:rules
 
   test-acceptance:
+    name: test-acceptance (eslint ${{ matrix.eslint }}, node ${{ matrix.node }})
     runs-on: ubuntu-latest
 
     strategy:
