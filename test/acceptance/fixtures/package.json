@@ -12,11 +12,13 @@
     "eslint-config-loderunner": "file:./eslint-config-loderunner.tgz",
     "eslint-config-prettier": "^10.1.0",
     "eslint-import-resolver-typescript": "^4.4.0",
+    "eslint-plugin-better-tailwindcss": "^4.0.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsdoc": "^62.0.0",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-vue": "^10.6.0",
+    "tailwindcss": "^4.0.0",
     "typescript": "^5.9.0",
     "typescript-eslint": "^8.53.0",
     "vitest": "^2.0.0"

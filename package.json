@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-loderunner",
   "version": "5.1.0",
-  "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, Vue, and more",
+  "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, Vue, Tailwind CSS, and more",
   "type": "module",
   "exports": {
     "./base": "./src/base/config.js",
@@ -16,6 +16,8 @@
     "./vitest/rules": "./src/vitest/rules.js",
     "./vue": "./src/vue/config.js",
     "./vue/rules": "./src/vue/rules.js",
+    "./tailwindcss": "./src/tailwindcss/config.js",
+    "./tailwindcss/rules": "./src/tailwindcss/rules.js",
     "./jsdoc": "./src/jsdoc/config.js",
     "./jsdoc/rules": "./src/jsdoc/rules.js",
     "./formatting": "./src/formatting/config.js",
@@ -32,6 +34,7 @@
     "react",
     "vitest",
     "vue",
+    "tailwindcss",
     "flat-config"
   ],
   "author": "Charles Francoise",
@@ -63,6 +66,7 @@
     "eslint": "9.39.5",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-typescript": "4.4.5",
+    "eslint-plugin-better-tailwindcss": "4.7.0",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jsdoc": "62.9.0",
     "eslint-plugin-react": "7.37.5",
@@ -82,6 +86,7 @@
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-import-resolver-typescript": "^4.0.0",
+    "eslint-plugin-better-tailwindcss": "^4.0.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsdoc": "^62.0.0",
     "eslint-plugin-react": "^7.37.0",
@@ -97,6 +102,9 @@
       "optional": true
     },
     "eslint-import-resolver-typescript": {
+      "optional": true
+    },
+    "eslint-plugin-better-tailwindcss": {
       "optional": true
     },
     "eslint-plugin-import": {
