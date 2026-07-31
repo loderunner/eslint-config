@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   test-rules:
+    name: test-rules (eslint ${{ matrix.eslint }})
     runs-on: ubuntu-latest
 
     strategy:
