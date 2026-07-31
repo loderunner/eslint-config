@@ -26,5 +26,5 @@ jobs:
           package-manager-cache: false
       - name: Install dependencies
         run: pnpm install --no-lockfile
-      - name: Run acceptance test
+      - name: Run tests
         run: pnpm test
