@@ -10,9 +10,8 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
-    ignore:
-      - dependency-name: '*'
-        update-types:
-          - version-update:semver-major
+    groups:
+      eslint-core:
+        patterns: ['eslint', '@eslint/js']
     commit-message:
       prefix: fix

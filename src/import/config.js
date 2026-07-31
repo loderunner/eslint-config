@@ -1,4 +1,4 @@
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 
 import importRules from './rules.js';
 
@@ -16,16 +16,16 @@ try {
 
 /**
  * Import ordering ESLint config with plugin, settings, and custom rules.
- * Includes eslint-plugin-import with Node resolver. TypeScript resolver is
+ * Includes eslint-plugin-import-x with Node resolver. TypeScript resolver is
  * auto-enabled if eslint-import-resolver-typescript is installed.
  *
  * @type {import('eslint').Linter.Config[]}
  */
 const importConfig = [
   {
-    plugins: { import: importPlugin },
+    plugins: { 'import-x': importPlugin },
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         ...(typescriptResolverAvailable && { typescript: true }),
         node: true,
       },
