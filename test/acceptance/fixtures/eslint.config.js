@@ -4,6 +4,7 @@ import formattingConfig from 'eslint-config-loderunner/formatting';
 import importConfig from 'eslint-config-loderunner/import';
 import jsdocConfig from 'eslint-config-loderunner/jsdoc';
 import reactConfig from 'eslint-config-loderunner/react';
+import tailwindcssConfig from 'eslint-config-loderunner/tailwindcss';
 import typescriptConfig from 'eslint-config-loderunner/typescript';
 import vitestConfig from 'eslint-config-loderunner/vitest';
 import vueConfig from 'eslint-config-loderunner/vue';
@@ -15,6 +16,11 @@ export default defineConfig([
   { extends: [importConfig] },
   { files: ['**/*.tsx'], extends: [reactConfig] },
   { files: ['**/*.vue'], extends: [vueConfig] },
+  {
+    files: ['**/*.{jsx,tsx}'],
+    extends: [tailwindcssConfig],
+    settings: { 'better-tailwindcss': { entryPoint: 'styles/app.css' } },
+  },
   { files: ['**/*.test.{js,ts,tsx}'], extends: [vitestConfig] },
   { files: ['**/*.{ts,tsx}'], extends: [jsdocConfig] },
   { extends: [formattingConfig] },

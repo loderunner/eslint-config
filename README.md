@@ -18,6 +18,7 @@ config below and install the required packages.
   - [typescript](#typescript)
   - [react](#react)
   - [vue](#vue)
+  - [tailwindcss](#tailwindcss)
   - [import](#import)
   - [jsdoc](#jsdoc)
   - [vitest](#vitest)
@@ -207,6 +208,47 @@ export default defineConfig([
   {
     files: ['**/*.vue'],
     extends: [vueConfig],
+  },
+]);
+```
+
+### tailwindcss
+
+Tailwind CSS rules.
+
+**Peer dependencies:**
+
+```bash
+pnpm add --save-dev eslint-plugin-better-tailwindcss
+```
+
+**Rules-only usage:**
+
+```javascript
+import { defineConfig } from 'eslint/config';
+
+import tailwindcssRules from 'eslint-config-loderunner/tailwindcss/rules';
+
+export default defineConfig([
+  {
+    files: ['**/*.{jsx,tsx}'],
+    rules: {
+      ...tailwindcssRules,
+    },
+  },
+]);
+```
+
+**Full config usage:**
+
+```javascript
+import tailwindcssConfig from 'eslint-config-loderunner/tailwindcss';
+import { defineConfig } from 'eslint/config';
+
+export default defineConfig([
+  {
+    files: ['**/*.{jsx,tsx}'],
+    extends: [tailwindcssConfig],
   },
 ]);
 ```
