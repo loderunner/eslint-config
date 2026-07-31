@@ -65,14 +65,14 @@ describe('acceptance test', () => {
       {
         const installCommand =
           eslintMajor === undefined || eslintMajor === ''
-            ? [
+            ? ['npm', 'install']
+            : [
                 'npm',
                 'install',
                 '--save-dev',
                 `eslint@^${eslintMajor}`,
                 `@eslint/js@^${eslintMajor}`,
-              ]
-            : ['npm', 'install'];
+              ];
         const { stdout, stderr, exitCode } =
           await container.exec(installCommand);
         if (exitCode !== 0) {
