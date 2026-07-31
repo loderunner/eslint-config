@@ -9,8 +9,13 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  test-rules:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        eslint: ['9', '10']
 
     steps:
       - name: Checkout code
@@ -26,5 +31,43 @@ jobs:
           package-manager-cache: false
       - name: Install dependencies
         run: pnpm install --no-lockfile
-      - name: Run tests
-        run: pnpm test
+      - name: Pin ESLint ${{ matrix.eslint }}
+        run: pnpm add --save-dev "eslint@^${{ matrix.eslint }}" "@eslint/js@^${{ matrix.eslint }}"
+      - name: Run rules test
+        run: pnpm run test:rules
+
+  test-acceptance:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        eslint: ['9', '10']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10.9.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
+      - name: Install dependencies
+        run: pnpm install --no-lockfile
+      - name: Run acceptance test
+        run: pnpm run test:acceptance
+        env:
+          ESLINT_VERSION: ${{ matrix.eslint }}
+
+  test:
+    if: always()
+    needs: [test-acceptance, test-rules]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check all job statuses
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: exit 1

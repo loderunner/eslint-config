@@ -2,13 +2,13 @@
  * Import ordering ESLint rules.
  *
  * Rules included:
- * - `import/order`: Enforce sorted imports with newlines between groups
- * - `import/no-deprecated`: Warn on using deprecated imports
+ * - `import-x/order`: Enforce sorted imports with newlines between groups
+ * - `import-x/no-deprecated`: Warn on using deprecated imports
  *
  * @type {import('eslint').Linter.RulesRecord}
  */
 const importRules = {
-  'import/order': [
+  'import-x/order': [
     'warn',
     {
       'newlines-between': 'always',
@@ -16,7 +16,7 @@ const importRules = {
       alphabetize: { order: 'asc' },
     },
   ],
-  'import/no-deprecated': 'warn',
+  'import-x/no-deprecated': 'warn',
 };
 
 export default importRules;

@@ -134,6 +134,16 @@ export default defineConfig([
 React and React Hooks rules. Includes JSX prop sorting (reserved props first,
 callbacks last).
 
+> **Warning:** On ESLint 10 with npm, installing this config fails because
+> `eslint-plugin-react`'s manifest caps its `eslint` peer range below 10 (it's
+> still runtime-compatible; see
+> [react/react#35729](https://github.com/react/react/issues/35729)). Fix with an
+> override:
+>
+> ```json
+> { "overrides": { "eslint-plugin-react": { "eslint": "$eslint" } } }
+> ```
+
 **Peer dependencies:**
 
 ```bash
@@ -261,7 +271,7 @@ newlines between groups, and warns on deprecated imports.
 **Peer dependencies:**
 
 ```bash
-pnpm add --save-dev eslint-plugin-import
+pnpm add --save-dev eslint-plugin-import-x
 ```
 
 **TypeScript support:**

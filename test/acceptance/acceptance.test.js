@@ -5,6 +5,8 @@ import { join } from 'node:path';
 import { GenericContainer } from 'testcontainers';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
+const eslintMajor = process.env.ESLINT_VERSION;
+
 describe('acceptance test', () => {
   let container;
   let tarballPath;
@@ -59,12 +61,20 @@ describe('acceptance test', () => {
   it(
     'should install dependencies and run eslint successfully',
     async () => {
-      // Install dependencies
+      // Install dependencies, pinning eslint/@eslint/js when ESLINT_VERSION is set
       {
-        const { stdout, stderr, exitCode } = await container.exec([
-          'npm',
-          'install',
-        ]);
+        const installCommand =
+          eslintMajor === undefined || eslintMajor === ''
+            ? ['npm', 'install']
+            : [
+                'npm',
+                'install',
+                '--save-dev',
+                `eslint@^${eslintMajor}`,
+                `@eslint/js@^${eslintMajor}`,
+              ];
+        const { stdout, stderr, exitCode } =
+          await container.exec(installCommand);
         if (exitCode !== 0) {
           console.error('npm install failed:');
           console.error();
@@ -77,6 +87,19 @@ describe('acceptance test', () => {
           console.error(stderr);
         }
         expect(exitCode).toBe(0);
+      }
+
+      // Guard against silently testing the wrong version when pinned
+      {
+        const { stdout, exitCode } = await container.exec([
+          'npx',
+          'eslint',
+          '--version',
+        ]);
+        expect(exitCode).toBe(0);
+        expect(stdout.trim()).toMatch(
+          eslintMajor ? new RegExp(`^v${eslintMajor}\\.`) : /^v\d+\./,
+        );
       }
 
       // Run eslint
