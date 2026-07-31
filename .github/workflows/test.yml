@@ -62,3 +62,12 @@ jobs:
         run: pnpm run test:acceptance
         env:
           ESLINT_VERSION: ${{ matrix.eslint }}
+
+  test:
+    if: always()
+    needs: [test-acceptance, test-rules]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check all job statuses
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: exit 1
