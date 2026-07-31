@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: 'daily'
     commit-message:
-      prefix: chore
+      prefix: ci
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
@@ -13,5 +13,3 @@ updates:
     groups:
       eslint-core:
         patterns: ['eslint', '@eslint/js']
-    commit-message:
-      prefix: fix
