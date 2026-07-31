@@ -6,6 +6,7 @@ import { GenericContainer } from 'testcontainers';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 const eslintMajor = process.env.ESLINT_VERSION;
+const nodeVersion = process.env.NODE_VERSION || '24';
 
 describe('acceptance test', () => {
   let container;
@@ -27,7 +28,7 @@ describe('acceptance test', () => {
     tarballPath = join(process.cwd(), tarball);
 
     // Start container
-    container = await new GenericContainer('node:24.10-slim')
+    container = await new GenericContainer(`node:${nodeVersion}-slim`)
       .withCommand(['sleep', 'infinity'])
       .withCopyFilesToContainer([
         {

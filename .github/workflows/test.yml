@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   test-rules:
+    name: test-rules (eslint ${{ matrix.eslint }})
     runs-on: ubuntu-latest
 
     strategy:
@@ -37,12 +38,14 @@ jobs:
         run: pnpm run test:rules
 
   test-acceptance:
+    name: test-acceptance (eslint ${{ matrix.eslint }}, node ${{ matrix.node }})
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
         eslint: ['9', '10']
+        node: ['20', '22', '24']
 
     steps:
       - name: Checkout code
@@ -62,6 +65,7 @@ jobs:
         run: pnpm run test:acceptance
         env:
           ESLINT_VERSION: ${{ matrix.eslint }}
+          NODE_VERSION: ${{ matrix.node }}
 
   test:
     if: always()
