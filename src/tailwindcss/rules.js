@@ -13,6 +13,10 @@
 const tailwindcssRules = {
   'better-tailwindcss/enforce-consistent-variant-order': 'warn',
   'better-tailwindcss/enforce-consistent-variable-syntax': 'warn',
+  'better-tailwindcss/enforce-consistent-line-wrapping': [
+    'warn',
+    { strictness: 'loose' },
+  ],
 };
 
 export default tailwindcssRules;
