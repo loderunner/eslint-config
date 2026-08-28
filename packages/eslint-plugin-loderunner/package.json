@@ -1,0 +1,34 @@
+{
+  "name": "eslint-plugin-loderunner",
+  "version": "6.1.0",
+  "description": "Custom ESLint/oxlint rules shared by eslint-config-loderunner and oxc-config-loderunner",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "prepublishOnly": "pnpm -w run lint && pnpm -w run test"
+  },
+  "devDependencies": {
+    "oxlint": "1.80.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "oxlint"
+  ],
+  "author": "Charles Francoise",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loderunner/eslint-config.git",
+    "directory": "packages/eslint-plugin-loderunner"
+  },
+  "homepage": "https://github.com/loderunner/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/loderunner/eslint-config/issues"
+  }
+}

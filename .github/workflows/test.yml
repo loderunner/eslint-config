@@ -33,9 +33,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-lockfile
       - name: Pin ESLint ${{ matrix.eslint }}
-        run: pnpm add --save-dev "eslint@^${{ matrix.eslint }}" "@eslint/js@^${{ matrix.eslint }}"
+        run: pnpm add --save-dev --filter eslint-config-loderunner "eslint@^${{ matrix.eslint }}" "@eslint/js@^${{ matrix.eslint }}"
       - name: Run rules test
         run: pnpm run test:rules
+      - name: Check generated oxc artifacts are up to date
+        run: pnpm run generate:oxc && git diff --exit-code -- packages/oxc-config-loderunner/oxlint packages/oxc-config-loderunner/oxfmt.json
 
   test-acceptance:
     name: test-acceptance (eslint ${{ matrix.eslint }}, node ${{ matrix.node }})
@@ -67,9 +69,37 @@ jobs:
           ESLINT_VERSION: ${{ matrix.eslint }}
           NODE_VERSION: ${{ matrix.node }}
 
+  test-acceptance-oxc:
+    name: test-acceptance-oxc
+    runs-on: ubuntu-latest
+
+    # oxlint/oxfmt/oxlint-tsgolint versions are pinned inside the fixtures
+    # under packages/oxc-config-loderunner/test/acceptance/ rather than
+    # matrixed here — oxlint's own versioning policy excludes JS plugins,
+    # type-aware linting, and nursery rules from semver, so an unpinned
+    # "latest" axis would fail on upstream churn unrelated to this config.
+    # Revisit if/when those fixtures grow an env-var version override
+    # (mirroring ESLINT_VERSION in test-acceptance above).
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6.0.10
+        with:
+          version: 10.9.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          package-manager-cache: false
+      - name: Install dependencies
+        run: pnpm install --no-lockfile
+      - name: Run oxc acceptance test
+        run: pnpm run test:acceptance:oxc
+
   test:
     if: always()
-    needs: [test-acceptance, test-rules]
+    needs: [test-acceptance, test-acceptance-oxc, test-rules]
     runs-on: ubuntu-latest
     steps:
       - name: Check all job statuses

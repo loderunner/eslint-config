@@ -1,0 +1,117 @@
+{
+  "name": "eslint-config-loderunner",
+  "version": "6.1.0",
+  "description": "Reusable ESLint flat configs for TypeScript, React, Vitest, Vue, Tailwind CSS, and more",
+  "type": "module",
+  "exports": {
+    "./base": "./src/base/config.js",
+    "./base/rules": "./src/base/rules.js",
+    "./typescript": "./src/typescript/config.js",
+    "./typescript/rules": "./src/typescript/rules.js",
+    "./import": "./src/import/config.js",
+    "./import/rules": "./src/import/rules.js",
+    "./react": "./src/react/config.js",
+    "./react/rules": "./src/react/rules.js",
+    "./vitest": "./src/vitest/config.js",
+    "./vitest/rules": "./src/vitest/rules.js",
+    "./vue": "./src/vue/config.js",
+    "./vue/rules": "./src/vue/rules.js",
+    "./tailwindcss": "./src/tailwindcss/config.js",
+    "./tailwindcss/rules": "./src/tailwindcss/rules.js",
+    "./jsdoc": "./src/jsdoc/config.js",
+    "./jsdoc/rules": "./src/jsdoc/rules.js",
+    "./formatting": "./src/formatting/config.js",
+    "./formatting/rules": "./src/formatting/rules.js",
+    "./plugin": "./src/plugin/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "typescript",
+    "react",
+    "vitest",
+    "vue",
+    "tailwindcss",
+    "flat-config"
+  ],
+  "author": "Charles Francoise",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loderunner/eslint-config.git",
+    "directory": "packages/eslint-config-loderunner"
+  },
+  "homepage": "https://github.com/loderunner/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/loderunner/eslint-config/issues"
+  },
+  "scripts": {
+    "prepublishOnly": "pnpm -w run lint && pnpm -w run test"
+  },
+  "dependencies": {
+    "eslint-plugin-loderunner": "workspace:*"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@vitest/eslint-plugin": "1.6.27",
+    "eslint": "10.9.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-import-resolver-typescript": "4.4.5",
+    "eslint-plugin-better-tailwindcss": "4.7.0",
+    "eslint-plugin-import-x": "4.17.1",
+    "eslint-plugin-jsdoc": "63.3.3",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-vue": "10.10.0",
+    "globals": "17.11.0",
+    "testcontainers": "12.1.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.67.0"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^9.0.0 || ^10.0.0",
+    "@vitest/eslint-plugin": "^1.0.0",
+    "eslint": "^9.0.0 || ^10.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-import-resolver-typescript": "^4.0.0",
+    "eslint-plugin-better-tailwindcss": "^4.0.0",
+    "eslint-plugin-import-x": "^4.17.0",
+    "eslint-plugin-jsdoc": "^62.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-vue": "^10.6.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vitest/eslint-plugin": {
+      "optional": true
+    },
+    "eslint-config-prettier": {
+      "optional": true
+    },
+    "eslint-import-resolver-typescript": {
+      "optional": true
+    },
+    "eslint-plugin-better-tailwindcss": {
+      "optional": true
+    },
+    "eslint-plugin-import-x": {
+      "optional": true
+    },
+    "eslint-plugin-jsdoc": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    }
+  }
+}

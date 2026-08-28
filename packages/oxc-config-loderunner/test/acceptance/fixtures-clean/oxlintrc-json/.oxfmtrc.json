@@ -1,0 +1,7 @@
+{
+  "printWidth": 80,
+  "singleQuote": true,
+  "sortPackageJson": false,
+  "sortImports": { "ignoreCase": false },
+  "overrides": [{ "files": ["**/*.md"], "options": { "proseWrap": "always" } }]
+}

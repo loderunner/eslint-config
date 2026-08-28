@@ -1,0 +1,21 @@
+{
+  "overrides": [
+    {
+      "files": ["**/*.test.*"],
+      "plugins": ["vitest"],
+      "rules": {
+        "typescript/no-explicit-any": "off",
+        "typescript/unbound-method": "off",
+        "typescript/no-unsafe-assignment": "off",
+        "typescript/no-unsafe-member-access": "off",
+        "vitest/no-commented-out-tests": "error",
+        "vitest/no-identical-title": "error",
+        "vitest/no-import-node-test": "error",
+        "vitest/no-interpolation-in-snapshots": "error",
+        "vitest/no-mocks-import": "error",
+        "vitest/no-unneeded-async-expect-function": "error",
+        "vitest/prefer-called-exactly-once-with": "error"
+      }
+    }
+  ]
+}

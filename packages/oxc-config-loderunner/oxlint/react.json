@@ -1,0 +1,17 @@
+{
+  "plugins": ["react"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/display-name": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unknown-property": "error",
+    "react/purity": "warn",
+    "react/immutability": "warn",
+    "react/set-state-in-render": "warn",
+    "react/preserve-manual-memoization": "warn",
+    "react/incompatible-library": "warn"
+  }
+}

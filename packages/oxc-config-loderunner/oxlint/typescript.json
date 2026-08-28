@@ -1,0 +1,71 @@
+{
+  "rules": {
+    "typescript/switch-exhaustiveness-check": [
+      "warn",
+      { "considerDefaultExhaustiveForUnions": true }
+    ],
+    "typescript/strict-boolean-expressions": [
+      "error",
+      {
+        "allowAny": false,
+        "allowNullableBoolean": false,
+        "allowNullableEnum": false,
+        "allowNullableNumber": false,
+        "allowNullableObject": false,
+        "allowNullableString": false,
+        "allowNumber": false,
+        "allowString": false
+      }
+    ],
+    "typescript/prefer-nullish-coalescing": "error",
+    "typescript/no-unnecessary-condition": "warn",
+    "typescript/no-misused-promises": ["error", { "checksVoidReturn": false }],
+    "typescript/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports", "fixStyle": "inline-type-imports" }
+    ],
+    "typescript/no-deprecated": "warn",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-unsafe-assignment": "error",
+    "typescript/no-unsafe-member-access": "error",
+    "typescript/no-unsafe-argument": "error",
+    "typescript/no-unsafe-call": "error",
+    "typescript/no-unsafe-return": "error",
+    "typescript/restrict-plus-operands": "error",
+    "typescript/only-throw-error": "error",
+    "typescript/prefer-promise-reject-errors": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/no-unsafe-function-type": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-namespace": "error",
+    "typescript/no-require-imports": "error",
+    "typescript/no-unnecessary-type-assertion": "error",
+    "typescript/no-unsafe-enum-comparison": "error",
+    "typescript/no-unnecessary-type-constraint": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+      "rules": {
+        "eslint/constructor-super": "off",
+        "eslint/getter-return": "off",
+        "eslint/no-class-assign": "off",
+        "eslint/no-const-assign": "off",
+        "eslint/no-dupe-class-members": "off",
+        "eslint/no-dupe-keys": "off",
+        "eslint/no-func-assign": "off",
+        "eslint/no-import-assign": "off",
+        "eslint/no-new-native-nonconstructor": "off",
+        "eslint/no-obj-calls": "off",
+        "eslint/no-setter-return": "off",
+        "eslint/no-this-before-super": "off",
+        "eslint/no-unreachable": "off",
+        "eslint/no-unsafe-negation": "off",
+        "eslint/no-with": "off",
+        "eslint/prefer-const": "error",
+        "eslint/prefer-rest-params": "error",
+        "eslint/prefer-spread": "error"
+      }
+    }
+  ]
+}

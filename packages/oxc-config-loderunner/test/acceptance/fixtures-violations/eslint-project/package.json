@@ -1,0 +1,26 @@
+{
+  "name": "acceptance-test-fixture-violations-eslint",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.0.0",
+    "@vitest/eslint-plugin": "1.6.27",
+    "eslint": "10.9.0",
+    "eslint-config-loderunner": "file:./eslint-config-loderunner.tgz",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-loderunner": "file:./eslint-plugin-loderunner.tgz",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "react": "^19.0.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.67.0",
+    "vitest": "^3.0.0"
+  },
+  "overrides": {
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    }
+  }
+}

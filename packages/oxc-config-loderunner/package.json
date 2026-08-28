@@ -1,0 +1,63 @@
+{
+  "name": "oxc-config-loderunner",
+  "version": "6.1.0",
+  "description": "Reusable oxlint and oxfmt configs for TypeScript, React, Vitest, and more",
+  "type": "module",
+  "exports": {
+    "./oxlint": "./src/oxlint/index.js",
+    "./oxlint/base.json": "./oxlint/base.json",
+    "./oxlint/typescript.json": "./oxlint/typescript.json",
+    "./oxlint/react.json": "./oxlint/react.json",
+    "./oxlint/vitest.json": "./oxlint/vitest.json",
+    "./oxfmt": "./src/oxfmt/index.js",
+    "./oxfmt.json": "./oxfmt.json"
+  },
+  "files": [
+    "src",
+    "oxlint",
+    "oxfmt.json"
+  ],
+  "keywords": [
+    "oxlint",
+    "oxfmt",
+    "oxc",
+    "eslint-config",
+    "typescript",
+    "react",
+    "vitest",
+    "flat-config"
+  ],
+  "author": "Charles Francoise",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loderunner/eslint-config.git",
+    "directory": "packages/oxc-config-loderunner"
+  },
+  "homepage": "https://github.com/loderunner/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/loderunner/eslint-config/issues"
+  },
+  "scripts": {
+    "prepublishOnly": "pnpm -w run lint && pnpm -w run test"
+  },
+  "devDependencies": {
+    "oxfmt": "0.65.0",
+    "oxlint": "1.80.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "testcontainers": "12.1.0"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.80.0",
+    "oxlint-tsgolint": ">=7.0.2001",
+    "oxfmt": "^0.65.0"
+  },
+  "peerDependenciesMeta": {
+    "oxlint-tsgolint": {
+      "optional": true
+    },
+    "oxfmt": {
+      "optional": true
+    }
+  }
+}

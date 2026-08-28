@@ -1,0 +1,410 @@
+{
+  "$schema": "https://oxc.rs/docs/guide/usage/linter/rules.html",
+  "_meta": {
+    "description": "Committed scrape of the oxlint rules reference (rule id -> plugin, category, type-aware, added-in version). Used by the shared/test/rule-map.test.js drift test to catch oxlint renaming or removing a rule that eslint-config-loderunner's presets map onto, and to guard against restating no-op rules. Verified 2026-08-26/2026-08-27 against https://oxc.rs/docs/guide/usage/linter/rules/<plugin>/<rule>.html.",
+    "verifiedOn": "2026-08-27"
+  },
+  "rules": {
+    "eslint/eqeqeq": {
+      "plugin": "eslint",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "eslint/no-var": {
+      "plugin": "eslint",
+      "category": "restriction",
+      "typeAware": false
+    },
+    "eslint/no-duplicate-imports": {
+      "plugin": "eslint",
+      "category": "style",
+      "typeAware": false
+    },
+    "eslint/no-unused-vars": {
+      "plugin": "eslint",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "eslint/curly": {
+      "plugin": "eslint",
+      "category": "style",
+      "typeAware": false
+    },
+    "eslint/no-array-constructor": {
+      "plugin": "eslint",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "eslint/no-case-declarations": {
+      "plugin": "eslint",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "eslint/no-fallthrough": {
+      "plugin": "eslint",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "eslint/no-prototype-builtins": {
+      "plugin": "eslint",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "eslint/no-empty": {
+      "plugin": "eslint",
+      "category": "restriction",
+      "typeAware": false
+    },
+    "eslint/no-regex-spaces": {
+      "plugin": "eslint",
+      "category": "restriction",
+      "typeAware": false
+    },
+
+    "typescript/switch-exhaustiveness-check": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/strict-boolean-expressions": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/prefer-nullish-coalescing": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/no-unnecessary-condition": {
+      "plugin": "typescript",
+      "category": "nursery",
+      "typeAware": true,
+      "notes": "not covered by semver; may be renamed/removed in a patch"
+    },
+    "typescript/no-misused-promises": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/consistent-type-imports": {
+      "plugin": "typescript",
+      "category": "style",
+      "typeAware": false
+    },
+    "typescript/no-deprecated": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+
+    "typescript/await-thenable": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-floating-promises": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-base-to-string": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-implied-eval": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-for-in-array": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-array-delete": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-misused-spread": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-duplicate-type-constituents": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-redundant-type-constituents": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/unbound-method": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/restrict-template-expressions": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": true
+    },
+    "typescript/no-this-alias": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/triple-slash-reference": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/prefer-as-const": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/no-wrapper-object-types": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/no-unsafe-declaration-merging": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/no-misused-new": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/no-duplicate-enum-values": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/no-extra-non-null-assertion": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "typescript/no-non-null-asserted-optional-chain": {
+      "plugin": "typescript",
+      "category": "correctness",
+      "typeAware": false
+    },
+
+    "typescript/no-explicit-any": {
+      "plugin": "typescript",
+      "category": "restriction",
+      "typeAware": false
+    },
+    "typescript/no-unsafe-assignment": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/no-unsafe-member-access": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/no-unsafe-argument": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/no-unsafe-call": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/no-unsafe-return": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/restrict-plus-operands": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/only-throw-error": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": true
+    },
+    "typescript/prefer-promise-reject-errors": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "typescript/ban-ts-comment": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "typescript/no-unsafe-function-type": {
+      "plugin": "typescript",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "typescript/no-empty-object-type": {
+      "plugin": "typescript",
+      "category": "restriction",
+      "typeAware": false
+    },
+    "typescript/no-namespace": {
+      "plugin": "typescript",
+      "category": "restriction",
+      "typeAware": false
+    },
+    "typescript/no-require-imports": {
+      "plugin": "typescript",
+      "category": "restriction",
+      "typeAware": false
+    },
+    "typescript/no-unnecessary-type-assertion": {
+      "plugin": "typescript",
+      "category": "suspicious",
+      "typeAware": true
+    },
+    "typescript/no-unsafe-enum-comparison": {
+      "plugin": "typescript",
+      "category": "suspicious",
+      "typeAware": true
+    },
+    "typescript/no-unnecessary-type-constraint": {
+      "plugin": "typescript",
+      "category": "suspicious",
+      "typeAware": false
+    },
+
+    "react/rules-of-hooks": {
+      "plugin": "react",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "react/exhaustive-deps": {
+      "plugin": "react",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "react/display-name": {
+      "plugin": "react",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "react/jsx-no-comment-textnodes": {
+      "plugin": "react",
+      "category": "suspicious",
+      "typeAware": false
+    },
+    "react/jsx-no-target-blank": {
+      "plugin": "react",
+      "category": "pedantic",
+      "typeAware": false
+    },
+    "react/no-unescaped-entities": {
+      "plugin": "react",
+      "category": "pedantic",
+      "typeAware": false,
+      "notes": "not present in the abbreviated oxc.rs rules index fetched 2026-08-27; category carried over from the migration plan's rule-by-rule 200-check verification"
+    },
+    "react/no-unknown-property": {
+      "plugin": "react",
+      "category": "restriction",
+      "typeAware": false
+    },
+    "react/purity": {
+      "plugin": "react",
+      "category": "correctness",
+      "typeAware": false,
+      "addedIn": "1.79.0"
+    },
+    "react/immutability": {
+      "plugin": "react",
+      "category": "correctness",
+      "typeAware": false,
+      "addedIn": "1.79.0"
+    },
+    "react/set-state-in-render": {
+      "plugin": "react",
+      "category": "correctness",
+      "typeAware": false,
+      "addedIn": "1.79.0"
+    },
+    "react/preserve-manual-memoization": {
+      "plugin": "react",
+      "category": "correctness",
+      "typeAware": false,
+      "addedIn": "1.79.0"
+    },
+    "react/incompatible-library": {
+      "plugin": "react",
+      "category": "correctness",
+      "typeAware": false,
+      "addedIn": "1.79.0"
+    },
+
+    "vitest/no-commented-out-tests": {
+      "plugin": "vitest",
+      "category": "suspicious",
+      "typeAware": false
+    },
+    "vitest/no-disabled-tests": {
+      "plugin": "vitest",
+      "category": "correctness",
+      "typeAware": false
+    },
+    "vitest/no-identical-title": {
+      "plugin": "vitest",
+      "category": "style",
+      "typeAware": false
+    },
+    "vitest/no-import-node-test": {
+      "plugin": "vitest",
+      "category": "style",
+      "typeAware": false
+    },
+    "vitest/no-interpolation-in-snapshots": {
+      "plugin": "vitest",
+      "category": "style",
+      "typeAware": false
+    },
+    "vitest/no-mocks-import": {
+      "plugin": "vitest",
+      "category": "style",
+      "typeAware": false
+    },
+    "vitest/require-mock-type-parameters": {
+      "plugin": "vitest",
+      "category": "correctness",
+      "typeAware": false,
+      "notes": "correctness, so on by default under categories.correctness — the vitest test-file override turning it off is not a no-op"
+    },
+    "vitest/no-unneeded-async-expect-function": {
+      "plugin": "vitest",
+      "category": "style",
+      "typeAware": false,
+      "notes": "not present in the abbreviated oxc.rs rules index fetched 2026-08-27; existence carried over from the migration plan's rule-by-rule 200-check verification"
+    },
+    "vitest/prefer-called-exactly-once-with": {
+      "plugin": "vitest",
+      "category": "style",
+      "typeAware": false
+    },
+
+    "loderunner/no-chained-arrow": {
+      "plugin": "loderunner",
+      "category": "js-plugin",
+      "typeAware": false,
+      "notes": "custom rule shipped via jsPlugins from eslint-plugin-loderunner, not a native category-based rule"
+    }
+  }
+}

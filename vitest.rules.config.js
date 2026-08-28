@@ -4,11 +4,14 @@ export default defineProject({
   test: {
     name: 'rules',
     globals: true,
-    include: ['test/rules/**/*.test.js'],
+    include: [
+      'packages/eslint-plugin-loderunner/test/rules/**/*.test.js',
+      'shared/test/**/*.test.js',
+    ],
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
-      'test/acceptance/fixtures/**',
+      'packages/eslint-config-loderunner/test/acceptance/fixtures/**',
     ],
   },
 });

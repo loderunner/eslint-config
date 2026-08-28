@@ -1,0 +1,17 @@
+{
+  "name": "acceptance-test-fixture-oxlint-config-ts",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.0.0",
+    "eslint-plugin-loderunner": "file:./eslint-plugin-loderunner.tgz",
+    "oxc-config-loderunner": "file:./oxc-config-loderunner.tgz",
+    "oxfmt": "0.65.0",
+    "oxlint": "1.80.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "react": "^19.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.0.0"
+  }
+}

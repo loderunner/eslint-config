@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "./node_modules/oxc-config-loderunner/oxlint/base.json",
+    "./node_modules/oxc-config-loderunner/oxlint/typescript.json",
+    "./node_modules/oxc-config-loderunner/oxlint/react.json",
+    "./node_modules/oxc-config-loderunner/oxlint/vitest.json"
+  ],
+  "categories": { "correctness": "error" },
+  "options": { "typeAware": true },
+  "jsPlugins": ["eslint-plugin-loderunner"],
+  "settings": { "react": { "version": "19.0.0" } },
+  "ignorePatterns": [".next/", "coverage/"]
+}

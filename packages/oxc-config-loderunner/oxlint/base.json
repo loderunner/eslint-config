@@ -1,0 +1,27 @@
+{
+  "rules": {
+    "eslint/eqeqeq": "error",
+    "eslint/no-var": "error",
+    "eslint/no-duplicate-imports": "error",
+    "eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "loderunner/no-chained-arrow": "error",
+    "eslint/curly": ["error", "all"],
+    "eslint/no-array-constructor": "error",
+    "eslint/no-case-declarations": "error",
+    "eslint/no-fallthrough": "error",
+    "eslint/no-prototype-builtins": "error",
+    "eslint/no-empty": "error",
+    "eslint/no-regex-spaces": "error"
+  }
+}
